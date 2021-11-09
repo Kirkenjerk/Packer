@@ -118,7 +118,7 @@ source "vsphere-iso" "windows" {
   host                  = "${var.vsphere_host}"
   username              = "${var.vsphere_username}"
   password              = "${var.vsphere_password}"
-  insecure_connection   = "true"
+  insecure_connection   = true
   datacenter            = "${var.vsphere_datacenter}"
   datastore             = "${var.vsphere_datastore}"
 
@@ -127,7 +127,7 @@ source "vsphere-iso" "windows" {
   RAM_reserve_all       = true
   disk_controller_type  = ["pvscsi"]
   #firmware             =  "bios"
-  floppy_files          = ["${var.autounattend_file}", "setup/setup.ps1", "setup/vmtools.cmd", "setup/appx.ps1"]
+  floppy_files          = ["${var.autounattend_file}", "setup/setup-winrm-test.ps1","setup/setup.ps1", "setup/vmtools.cmd", "setup/appx.ps1", "setup/disable-server-manager.ps1", "setup/install-vm-tools.cmd", "setup/enable-winrm.ps1", "setup/enable-rdp.cmd", "setup/set-temp.ps1", "setup/resetnetwork.ps1", "setup/disable-network-discovery.cmd", "setup/choco-install.ps1", "setup/disable-winrm.ps1"]
   floppy_img_path       = "${var.floppy_pvscsi}"
   guest_os_type         = "${var.vsphere_guest_os_type}"
   iso_checksum          = "${var.os_iso_checksum}"
@@ -150,7 +150,7 @@ source "vsphere-iso" "windows" {
   communicator          = "winrm"
   winrm_username        = "${var.winrm_username}"
   winrm_password        = "${var.winrm_password}"
-  winrm_timeout         = "10m"
+  winrm_timeout         = "20m"
 }
 
 build {
