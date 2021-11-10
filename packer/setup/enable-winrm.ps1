@@ -4,10 +4,6 @@ Start-Transcript -Path 'C:/Automation/setup.txt' -append;
 <#$VerbosePreference = 'Continue'; #>;
 $InformationPreference = 'Continue';
 
-$c = New-SelfSignedCertificate -DnsName "127.0.0.1" -CertStoreLocation cert:\LocalMachine\My>>
-winrm create winrm/config/Listener?Address=*+Transport=HTTPS "@{Hostname=`"127.0.0.1`";CertificateThumbprint=`"$($c.ThumbPrint)`"}"
-netsh advfirewall firewall add rule name="WinRM-HTTPS" dir=in localport=5986 protocol=TCP action=allow
-
 $NetworkListManager = [Activator]::CreateInstance([Type]::GetTypeFromCLSID([Guid]"{DCB00C01-570F-4A9B-8D69-199FDBA5723B}"))
 $Connections = $NetworkListManager.GetNetworkConnections()
 $Connections | ForEach-Object { $_.GetNetwork().SetCategory(1) }
