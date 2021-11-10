@@ -2,8 +2,8 @@ $ErrorActionPreference = "Stop"
 
 # Switch network connection to private mode
 # Required for WinRM firewall rules
-$profile = Get-NetConnectionProfile
-Set-NetConnectionProfile -Name $profile.Name -NetworkCategory Private
+$netprofile = Get-NetConnectionProfile
+Set-NetConnectionProfile -Name $netprofile.Name -NetworkCategory Private
 
 # WinRM Configure
 winrm quickconfig -quiet
