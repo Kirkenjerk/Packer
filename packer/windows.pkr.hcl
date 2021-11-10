@@ -148,9 +148,11 @@ source "vsphere-iso" "windows" {
   vm_name               = "${var.vsphere_vm_name}"
   convert_to_template   = "true"
   communicator          = "winrm"
-  winrm_username        = "${var.winrm_username}"
-  winrm_password        = "${var.winrm_password}"
-  winrm_timeout         = "20m"
+  winrm_insecure        = "true"
+  winrm_use_ssl         = "true"
+  winrm_username        = "Administrator" #"${var.winrm_username}"
+  winrm_password        = "hunter2"      #"${var.winrm_password}"
+  winrm_timeout         = "30m"
 }
 
 build {
