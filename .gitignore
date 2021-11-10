@@ -1,3 +1,4 @@
 variables.auto.pkrvars.hcl
 packer_cache
 .DS_Store
+testwinrm.ps1
