@@ -133,7 +133,7 @@ source "vsphere-iso" "windows" {
   iso_checksum          = "${var.os_iso_checksum}"
   iso_url               = "${var.os_iso_url}"
   iso_paths             = ["${var.vmtools_iso_path}"]
-  ip_wait_timeout       = "40m"
+  ip_wait_timeout       = "30m"
 
   network_adapters {
     network             = "${var.vsphere_network}"
@@ -150,8 +150,8 @@ source "vsphere-iso" "windows" {
   communicator          = "winrm"
   winrm_insecure        = "true"
   winrm_use_ssl         = "true"
-  winrm_username        = "Administrator" #"${var.winrm_username}"
-  winrm_password        = "hunter2"      #"${var.winrm_password}"
+  winrm_username        = "${var.winrm_username}"
+  winrm_password        = "${var.winrm_password}"
   winrm_timeout         = "30m"
 }
 
