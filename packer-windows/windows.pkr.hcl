@@ -35,14 +35,19 @@ variable "mem_size" {
   default = 16000
 }
 
-variable "os_iso_checksum" {
-  type    = string
-  default = ""
-}
+#variable "os_iso_checksum" {
+#  type    = string
+#  default = ""
+#}
 
-variable "os_iso_url" {
-  type    = string
-  default = ""
+#variable "os_iso_url" {
+#  type    = string
+ # default = ""
+#}
+
+variable "os_iso_path" {
+    type   = string
+    default = ""
 }
 
 variable "vmtools_iso_path" {
@@ -130,9 +135,9 @@ source "vsphere-iso" "windows" {
   floppy_files          = ["${var.autounattend_file}","setup/testwinrm.ps1","setup/setup.ps1", "setup/vmtools.cmd", "setup/appx.ps1", "setup/disable-server-manager.ps1", "setup/install-vm-tools.cmd", "setup/enable-winrm.ps1", "setup/enable-rdp.cmd", "setup/set-temp.ps1", "setup/resetnetwork.ps1", "setup/disable-network-discovery.cmd", "setup/choco-install.ps1", "setup/disable-winrm.ps1"]
   floppy_img_path       = "${var.floppy_pvscsi}"
   guest_os_type         = "${var.vsphere_guest_os_type}"
-  iso_checksum          = "${var.os_iso_checksum}"
-  iso_url               = "${var.os_iso_url}"
-  iso_paths             = ["${var.vmtools_iso_path}"]
+  #so_checksum          = "${var.os_iso_checksum}"
+  #iso_url              = "${var.os_iso_url}"
+  iso_paths              = ["${var.os_iso_path}","${var.vmtools_iso_path}"]
   ip_wait_timeout       = "30m"
 
   network_adapters {
