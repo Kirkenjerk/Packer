@@ -1,0 +1,33 @@
+# Name or IP of you vCenter Server
+vsphere_server          = "vcenter.domain.com"
+
+# vsphere username
+vsphere_username        = "administrator@vsphere.local"
+
+# vsphere password
+vsphere_password        = "Password for Vsphere Username above"
+
+# vsphere datacenter name
+vsphere_datacenter      = "Datacenter Name"
+
+# name or IP of the ESXi host
+vsphere_host            = "Host Name to choose specific host"
+
+# vsphere network
+vsphere_network         = "Network Name"   
+
+# vsphere datastore
+vsphere_datastore       = "Datastore Name"
+
+# datastore path to the vmtools iso file (You can download VMware Tools packages for Windows here (.zip file): https://customerconnect.vmware.com/en/downloads/details?downloadGroup=VMTOOLS1135&productId=1073&rPId=74478)
+vmtools_iso_path        = "[datastore] /path/to/iso.iso"
+
+# datastore path to the floppy image for virtual iSCSI drivers (part of VM Tools, see above) 
+floppy_pvscsi           = "[datastore] /floppies/floppy_file_name.flp"
+
+
+# Windows username (created in autounattend.xml. If you change it here the please also adjust in all autounattend.xml)
+winrm_username         = "Administrator"
+
+# Windows password (created in autounattend.xml. If you change it here the please also adjust in all autounattend.xml)
+winrm_password         = "Admin local password"
