@@ -1,11 +1,11 @@
 {
-    "vcenter_server":"vcenter.kirkenjerk.us",
-    "username":"administrator",
-    "password":"tatvig-javme1-hoGmud",
-    "datastore":"Kamino",
+    "vcenter_server":"vcenter domain here,
+    "username":"vcenter username here",
+    "password":"password here",
+    "datastore":"datastore here",
     "folder": "Templates",
     "vm_name": "ubuntu2104",
-    "host":"10.1.8.29",
+    "host":"host ip here",
     "cluster": "Home",
     "network": "Server Network (10.1.4.0)"
 }
