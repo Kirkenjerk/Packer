@@ -1,0 +1,11 @@
+{
+    "vcenter_server":"vcenter.kirkenjerk.us",
+    "username":"administrator",
+    "password":"tatvig-javme1-hoGmud",
+    "datastore":"Kamino",
+    "folder": "Templates",
+    "vm_name": "ubuntu2104",
+    "host":"10.1.8.29",
+    "cluster": "Home",
+    "network": "Server Network (10.1.4.0)"
+}
